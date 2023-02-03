@@ -1,15 +1,21 @@
 const WordPOS = require("wordpos"),
   wordpos = new WordPOS();
+const multer = require('multer')
+const fs = require('fs')
 
-const { of, from } = require("rxjs");
+const upload = multer()
 
-const { map, mergeMap, toArray } = require("rxjs/operators");
+// const { of, from } = require("rxjs");
+// const { map, mergeMap, toArray } = require("rxjs/operators");
 
 module.exports = {
   getSpeech: async (req, res) => {
-    // console.log(req.body);
-    console.log(req.file)
-    const text = req.file.buffer.toString();
+    const text = req.file.buffer.toString()
+    // const buffer = fs.readFileSync(req.file.buffer)
+    // console.log(buffer.toString())
+
+    // const text = file.toString();
+    // console.log("text",text)
 
     try {
       console.log("start........................");
@@ -47,7 +53,7 @@ module.exports = {
         adverbsPercentage: (adverbs.length / totalWords.length) * 100,
       };
 
-      console.log("end.............");
+  
       console.log(dataSet);
       res.json(dataSet);
     } catch (error) {

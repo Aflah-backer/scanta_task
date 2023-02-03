@@ -3,23 +3,35 @@ import { useState } from "react";
 import "./style.css";
 import { MdCloudUpload, MdDelete } from "react-icons/md";
 import { AiFillFileImage } from "react-icons/ai";
-import axios from 'axios'
+import axios from "axios";
 
 export default function FileUpload() {
   const [file, setFile] = useState("");
   const [fileName, setFileName] = useState("No selected file");
+  
   const handleFileChange = (event) => {
+  
     setFile(event.target.files[0]);
     setFileName(event.target.files[0].name);
-    console.log(event.target.files[0]);
   };
 
-  const submitData = async() => {
-    console.log("first")
-    console.log("sssssssssssssssssssss",file.json())
-    const responce = await axios.post("http://localhost:5000/speech/addSpeech",{file:file.name})
+
+
+  const submitData = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file)
+    const responce = await axios.post(
+        "http://localhost:5000/speech/addSpeech",
+        formData
+      );
+     
     console.log(responce)
   };
+
+ 
+
+  // console.log("fileBuffer", fileBuffer);
 
   return (
     <main>
@@ -50,8 +62,8 @@ export default function FileUpload() {
           <AiFillFileImage color="#1475cf" />
           <span>
             {fileName}
-            <MdDelete 
-            className="deleteIcon"
+            <MdDelete
+              className="deleteIcon"
               onClick={() => {
                 setFileName("No Selected File");
                 setFile(null);
@@ -59,7 +71,13 @@ export default function FileUpload() {
             />
           </span>
         </section>
-        {file && <div className="btnDiv"><button className="btn" onClick={submitData}>Submit</button></div>  }
+        {file && (
+          <div className="btnDiv">
+            <button className="btn" onClick={submitData}>
+              Submit
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );
