@@ -10,7 +10,7 @@ export default function FileUpload() {
   const [file, setFile] = useState("");
   const [fileName, setFileName] = useState("No selected file");
   const [res, setRes] = useState({});
-  const [loading,setLoading] =useState(false)
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -19,7 +19,7 @@ export default function FileUpload() {
 
   const submitData = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     const formData = new FormData();
     formData.append("file", file);
     const responce = await axios.post(
@@ -28,10 +28,16 @@ export default function FileUpload() {
     );
     setRes(responce);
   };
-  console.log(res)
+
+  const resetState = () => {
+    console.log("first")
+    setFileName("No Selected File");
+    setFile(null);
+    setLoading(false)
+  };
   return (
     <>
-      {!loading ?  (
+      {!loading ? (
         <main>
           <div className="fileUploadWrapper">
             <form
@@ -80,9 +86,9 @@ export default function FileUpload() {
             )}
           </div>
         </main>
-       ) : (
-        <DashBoard response={res}/>
-      )} 
+      ) : (
+        <DashBoard response={res} reset={resetState}/>
+      )}
     </>
   );
 }
