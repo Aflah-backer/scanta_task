@@ -1,7 +1,29 @@
-.dashBoardContainer{
-    height: calc(100vh - 80px);
+.dashBoardContainer {
+  height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+}
+.wrapper {
+  display: flex;
+  gap: 3rem;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 400px;    
+  width: 250px;
+  border-radius: 5px;
+}
+.card {
+  width: 200px;
+}
+.text{
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-

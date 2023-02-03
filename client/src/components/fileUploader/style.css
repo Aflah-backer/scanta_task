@@ -1,9 +1,15 @@
 main{
-    height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
 }
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -11,9 +17,9 @@ form{
     align-items: center;
     border: 1px dashed #424242;
     height: 300px;
-    width: 500px;
     cursor: pointer;
     border-radius: 5px;
+    background-color: #e9f0ff;
 }
 .uploadingIcon{
     position: absolute;
@@ -22,6 +28,7 @@ form{
     align-items: center;
 }
 .uploaded-row{
+    width: 500px;
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -29,5 +36,24 @@ form{
     padding: 15px 20px;
     border-radius: 5px;
     background-color: #e9f0ff;
-
+}
+.btnDiv{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: orange;
+    color: #e9f0ff;
+}
+.deleteIcon{
+    margin-left: 1rem;
+    font-size: large;
 }

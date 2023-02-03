@@ -7,6 +7,8 @@ const { map, mergeMap, toArray } = require("rxjs/operators");
 
 module.exports = {
   getSpeech: async (req, res) => {
+    // console.log(req.body);
+    console.log(req.file)
     const text = req.file.buffer.toString();
 
     try {
