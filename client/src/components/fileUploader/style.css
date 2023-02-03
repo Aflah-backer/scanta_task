@@ -5,7 +5,7 @@ main{
     height: 100vh;
     background: -webkit-linear-gradient(left, #a445b2, #fa4299);
 }
-.wrapper{
+.fileUploadWrapper{
     display: flex;
     flex-direction: column;
 }
@@ -52,6 +52,7 @@ form{
 .btn:hover{
     background-color: orange;
     color: #e9f0ff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .deleteIcon{
     margin-left: 1rem;

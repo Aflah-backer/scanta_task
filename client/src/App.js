@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <FileUpload />
-      {/* <DashBoard/> */}
+      <FileUpload/>
     </div>
   );
 }
