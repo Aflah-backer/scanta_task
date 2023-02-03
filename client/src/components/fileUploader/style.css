@@ -1,0 +1,33 @@
+main{
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #424242;
+    height: 300px;
+    width: 500px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.uploadingIcon{
+    position: absolute;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.uploaded-row{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #e9f0ff;
+
+}
