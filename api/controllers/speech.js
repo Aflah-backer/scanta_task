@@ -27,7 +27,6 @@ module.exports = {
         adjectivesPercentage: Math.round((adjectivesLength / totalLength) * 100),
         adverbsPercentage: Math.round((adverbsLength / totalLength) * 100),
       };
-      console.log(dataSet)
       res.json(dataSet);
     } catch (error) {
       console.log(error);
