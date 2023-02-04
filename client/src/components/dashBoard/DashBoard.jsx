@@ -17,10 +17,10 @@ function DashBoard({ response, reset }) {
     setPersentage(response.data);
   }, [response.data]);
 
-  const nouns = Math.floor(persentage?.nounsPercentage);
-  const verbs = Math.floor(persentage?.verbsPercentage);
-  const adjectves = Math.floor(persentage?.adjectivesPercentage);
-  const adverbs = Math.floor(persentage?.adverbsPercentage);
+  const nouns = persentage?.nounsPercentage;
+  const verbs = persentage?.verbsPercentage;
+  const adjectves = persentage?.adjectivesPercentage;
+  const adverbs = persentage?.adverbsPercentage;
 
   if (loading) {
     return (
@@ -29,7 +29,6 @@ function DashBoard({ response, reset }) {
       </div>
     );
   }
-  const percentage = 66;
 
   return (
     // <>

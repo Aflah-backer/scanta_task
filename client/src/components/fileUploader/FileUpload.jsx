@@ -5,13 +5,13 @@ import { MdCloudUpload, MdDelete } from "react-icons/md";
 import { AiFillFileImage } from "react-icons/ai";
 import axios from "axios";
 import DashBoard from "../dashBoard/DashBoard";
+import textIcon from './assets/textIcon.svg'
 
 export default function FileUpload() {
   const [file, setFile] = useState("");
   const [fileName, setFileName] = useState("No selected file");
   const [res, setRes] = useState({});
-  const [loading, setLoading] = useState(false);
-
+  const [loading, setLoading] = useState(false)
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
     setFileName(event.target.files[0].name);
@@ -36,7 +36,7 @@ export default function FileUpload() {
     setLoading(false)
   };
   return (
-    <>
+    <div className="mainWrapper">
       {!loading ? (
         <main>
           <div className="fileUploadWrapper">
@@ -52,7 +52,7 @@ export default function FileUpload() {
                 onChange={handleFileChange}
               />
               {file ? (
-                <img src={file} width={60} height={60} alt={fileName} />
+                <img src={textIcon} width={60} height={60} alt={fileName} />
               ) : (
                 <div className="uploadingIcon">
                   <MdCloudUpload
@@ -89,6 +89,6 @@ export default function FileUpload() {
       ) : (
         <DashBoard response={res} reset={resetState}/>
       )}
-    </>
+    </div>
   );
 }

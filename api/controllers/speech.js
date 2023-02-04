@@ -19,15 +19,15 @@ module.exports = {
       const adjectivesLength = adjectives.length;
       const adverbs = await wordpos.getAdverbs(totalWords);
       const adverbsLength = adverbs.length;
-      const totalLength =
-        adjectivesLength + verbsLength + nounsLength + adverbsLength;
+      const totalLength = adjectivesLength + verbsLength + nounsLength + adverbsLength
 
       const dataSet = {
-        nounsPercentage: (nouns.length / totalLength) * 100,
-        verbsPercentage: (verbs.length / totalLength) * 100,
-        adjectivesPercentage: (adjectives.length / totalLength) * 100,
-        adverbsPercentage: (adverbs.length / totalLength) * 100,
+        nounsPercentage: Math.round((nounsLength / totalLength) * 100),
+        verbsPercentage: Math.round((verbsLength / totalLength) * 100),
+        adjectivesPercentage: Math.round((adjectivesLength / totalLength) * 100),
+        adverbsPercentage: Math.round((adverbsLength / totalLength) * 100),
       };
+      console.log(dataSet)
       res.json(dataSet);
     } catch (error) {
       console.log(error);

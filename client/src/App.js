@@ -1,5 +1,4 @@
 import "./App.css";
-import DashBoard from "./components/dashBoard/DashBoard";
 import FileUpload from "./components/fileUploader/FileUpload";
 import NavBar from "./components/navBar/NavBar";
 

@@ -9,7 +9,9 @@ main{
     display: flex;
     flex-direction: column;
 }
-
+.mainWrapper{
+    height: 100%;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -38,6 +40,21 @@ form{
     border-radius: 5px;
     background-color: #e9f0ff;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+@media only screen and (max-width: 900px) {
+    .uploaded-row{
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .uploaded-row{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .uploaded-row{
+        width: 250px;
+    }
 }
 .btnDiv{
     display: flex;
